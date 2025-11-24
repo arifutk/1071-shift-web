@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>1071 Coffee Lounge - Shift Planlama</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>1071 Coffee Lounge • Shift Planlama</h1>
+        <p>Çalışan, vardiya ve haftalık program yönetimi</p>
+    </header>
+
+    <main>
+        <section class="panel" id="employees-panel">
+            <h2>Çalışanlar</h2>
+            <form id="employee-form">
+                <div class="field">
+                    <label>Ad Soyad</label>
+                    <input type="text" id="emp-name" required />
+                </div>
+                <div class="field">
+                    <label>Rol</label>
+                    <input type="text" id="emp-role" placeholder="Barista, Garson, Kasa..." required />
+                </div>
+                <div class="field">
+                    <label>Telefon</label>
+                    <input type="text" id="emp-phone" />
+                </div>
+                <div class="field">
+                    <label>Saatlik Ücret (opsiyonel)</label>
+                    <input type="number" id="emp-rate" min="0" />
+                </div>
+                <button type="submit">Çalışan Ekle</button>
+            </form>
+
+            <h3>Aktif Çalışanlar</h3>
+            <ul id="employee-list"></ul>
+        </section>
+
+        <section class="panel" id="shifts-panel">
+            <h2>Vardiya Oluştur</h2>
+            <form id="shift-form">
+                <div class="field">
+                    <label>Tarih</label>
+                    <input type="date" id="shift-date" required />
+                </div>
+                <div class="field">
+                    <label>Başlangıç</label>
+                    <input type="time" id="shift-start" required />
+                </div>
+                <div class="field">
+                    <label>Bitiş</label>
+                    <input type="time" id="shift-end" required />
+                </div>
+                <div class="field">
+                    <label>Bölüm / Pozisyon</label>
+                    <input type="text" id="shift-position" placeholder="Bar, Salon, Mutfak..." required />
+                </div>
+                <div class="field">
+                    <label>Çalışan (boş bırakırsan açık shift)</label>
+                    <select id="shift-employee">
+                        <option value="">- Seçilmedi -</option>
+                    </select>
+                </div>
+                <button type="submit">Vardiya Kaydet</button>
+            </form>
+
+            <h2>Haftalık Program</h2>
+            <div class="field inline">
+                <label>Herhangi bir tarih seç (o haftayı getirir)</label>
+                <input type="date" id="week-date" />
+                <button id="load-week-btn" type="button">Haftayı Göster</button>
+            </div>
+            <div id="schedule-table-container">
+                <!-- JS ile doldurulacak -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <small>1071 Coffee Lounge • İç kullanım aracı</small>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
